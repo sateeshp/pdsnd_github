@@ -114,9 +114,9 @@ def time_stats(df):
     df['Start Time'] = pd.to_datetime(df['Start Time'])
     df['month'] = df['Start Time'].dt.month
     print('Most common month:', df['month'].mode()[0],
-        'Count:', df['month'].value_counts()[:1].sort_values(ascending=False).iloc[0],
-        'Filter:', FILTER_CRITERIA)
-
+          'Count:', df['month'].value_counts()[:1].sort_values(
+          ascending=False).iloc[0],
+          'Filter:', FILTER_CRITERIA)
 
     # display the most common day of week
     df['week_day_name'] = df['Start Time'].dt.day_name()
@@ -137,7 +137,8 @@ def station_stats(df):
     start_time = time.time()
 
     # display most commonly used start station
-    print('Most commonly used start station is:', df['Start Station'].mode()[0])
+    print('Most commonly used start station is:', df['Start Station'].mode(
+    )[0])
 
     # display most commonly used end station
     print('Most commonly used end station is:', df['End Station'].mode()[0])
@@ -145,7 +146,7 @@ def station_stats(df):
     # display most frequent combination of start station and end station trip
     df['travel_trip'] = df['Start Station'] + ' - ' + df['End Station']
     print('Most frequent combination of start station and end station trip is:',
-        df['travel_trip'].mode()[0])
+          df['travel_trip'].mode()[0])
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -168,13 +169,15 @@ def trip_duration_stats(df):
 
 
 def display_data(df):
-    view_data = input('\nWould you like to view 5 rows of individual trip data? Enter yes or no\n').lower()
+    view_data = input('\nWould you like to view 5 rows of individual trip '
+                      'data? Enter yes or no\n').lower()
     if view_data in ['yes', 'ye', 'yep', 'yeah', 'y']:
         start_loc = 0
         while True:
             print(df.iloc[start_loc:start_loc+5])
             start_loc += 5
-            if start_loc >= df.count()[0]:   # If start_loc exceeds record count, exit loop
+            # If start_loc exceeds record count, exit loop
+            if start_loc >= df.count()[0]:
                 break
             view_data = input("Do you wish to continue?: ").lower()
             if view_data not in ['yes', 'ye', 'yep', 'yeah', 'y']:
