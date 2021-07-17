@@ -1,3 +1,8 @@
+"""Bikeshare Rental Statistics
+
+This script allows the user to print rental statistics for the select cities.
+Data files are needed for this script to run.
+"""
 import time
 import pandas as pd
 import numpy as np
