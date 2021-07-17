@@ -109,9 +109,9 @@ def time_stats(df):
     df['Start Time'] = pd.to_datetime(df['Start Time'])
     df['month'] = df['Start Time'].dt.month
     print('Most common month:', df['month'].mode()[0],
-        'Count:', df['month'].value_counts()[:1].sort_values(ascending=False).iloc[0],
-        'Filter:', FILTER_CRITERIA)
-
+          'Count:', df['month'].value_counts()[:1].sort_values(
+          ascending=False).iloc[0],
+          'Filter:', FILTER_CRITERIA)
 
     # display the most common day of week
     df['week_day_name'] = df['Start Time'].dt.day_name()
