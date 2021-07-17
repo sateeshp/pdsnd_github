@@ -4,7 +4,7 @@
 17-Jul-2021
 
 ### Project Title
-BikeShare Rentals Analytics
+BikeShare Rental Statistics
 
 ### Description
 This project provides bike rental statistics such as 'most frequent times',		'most
